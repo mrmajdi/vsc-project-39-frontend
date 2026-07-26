@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #16A34A;
+    --primary-dark: #15803D;
+    --secondary: #0EA5E9;
+    --accent: #F59E0B;
+    --success: #22C55E;
+    --warning: #EAB308;
+    --danger: #EF4444;
+    --neutral-50: #F8FAFC;
+    --neutral-100: #F1F5F9;
+    --neutral-200: #E2E8F0;
+    --neutral-400: #94A3B8;
+    --neutral-600: #475569;
+    --neutral-800: #1E293B;
+    --neutral-900: #0F172A;
+  }
+  html {
+    direction: rtl;
+    lang: fa;
+  }
+  body {
+    font-family: 'Vazirmatn Variable', 'Vazirmatn', sans-serif;
+    background-color: var(--neutral-50);
+    color: var(--neutral-800);
+    @apply antialiased;
+  }
+  h1 {
+    @apply text-4xl font-bold leading-tight;
+  }
+  h2 {
+    @apply text-3xl font-bold leading-snug;
+  }
+  h3 {
+    @apply text-2xl font-semibold leading-snug;
+  }
+  h4 {
+    @apply text-xl font-semibold;
+  }
+}
+
+@layer components {
+  .container-main {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-primary text-white font-medium text-base px-6 py-2.5 rounded-lg shadow-sm hover:bg-primary-dark transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-white text-primary border border-primary font-medium text-base px-6 py-2.5 rounded-lg shadow-sm hover:bg-neutral-50 transition-all focus:outline-none focus:ring-2 focus:ring-primary;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 bg-transparent text-neutral-600 font-medium text-base px-4 py-2.5 rounded-lg hover:bg-neutral-100 transition-all focus:outline-none focus:ring-2 focus:ring-neutral-400;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 bg-danger text-white font-medium text-base px-6 py-2.5 rounded-lg shadow-sm hover:bg-red-600 transition-all focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-danger;
+  }
+  .card {
+    @apply bg-white rounded-lg border border-neutral-200 shadow-sm overflow-hidden transition-all hover:shadow-md;
+  }
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-white border border-neutral-200 rounded-md text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent;
+  }
+  .badge-discount {
+    @apply inline-flex items-center bg-danger text-white text-xs font-bold px-2 py-1 rounded-sm;
+  }
+  .badge-status {
+    @apply inline-flex items-center bg-success/10 text-success text-xs font-medium px-2.5 py-1 rounded-full;
+  }
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--neutral-100);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--neutral-400);
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--neutral-600);
+  }
+  /* Leaflet map container */
+  .leaflet-container {
+    height: 100%;
+    width: 100%;
+  }
+}
